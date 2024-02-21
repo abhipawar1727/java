@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="3bd9b845-059d-4ce8-97f1-a1c00d1ae9f4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select  * from studentleave;]]>
+	</queryString>
+	<field name="rollno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="leaveStartDate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="leaveEndDate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="575" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="-304" y="-10" width="802" height="67" uuid="cec6500d-b2e1-4546-b79e-6e552e6dd707"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="24" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Student Leave's]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="44" y="0" width="705" height="37" backcolor="#666666" uuid="80ab61f9-8af9-4553-b3bc-dc348ff94b3a"/>
+				<staticText>
+					<reportElement style="Column header" x="20" y="12" width="176" height="15" uuid="6dcebc8a-0331-4e42-84c7-5f1f7e01cf53"/>
+					<text><![CDATA[rollno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="176" y="12" width="176" height="15" uuid="5d42a7ff-2e55-44f5-b108-3d0f7e6be192"/>
+					<text><![CDATA[leaveStartDate]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="352" y="12" width="176" height="15" uuid="e678d663-96ee-4ba8-9090-0300651668d5"/>
+					<text><![CDATA[leaveEndDate]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="528" y="12" width="155" height="15" uuid="5d7ffcc2-01bf-439d-84d1-a9d7f5d07caf"/>
+					<text><![CDATA[duration]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="44" y="0" width="705" height="15" uuid="bd315f38-0a84-4351-9f54-7abecbe7fbf0"/>
+				<textField>
+					<reportElement style="Detail" x="20" y="0" width="176" height="15" uuid="acd16037-7259-42cb-961c-173ca715ca40"/>
+					<textFieldExpression><![CDATA[$F{rollno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="176" y="0" width="176" height="15" uuid="c3804168-dab2-4c82-b20b-435a199b81b6"/>
+					<textFieldExpression><![CDATA[$F{leaveStartDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="352" y="0" width="176" height="15" uuid="ee9dedbf-ec9e-4a3f-a826-3250be574a76"/>
+					<textFieldExpression><![CDATA[$F{leaveEndDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="528" y="0" width="176" height="15" uuid="931bde3c-cf99-403a-b727-cbab0632f1c7"/>
+					<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="44" y="15" width="705" height="1" uuid="51e86c09-9d48-4a6d-93fa-ce18faa4a36c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="618" y="19" width="131" height="20" forecolor="#000000" uuid="49f725aa-7f00-4ec8-8870-6a9757bf604c"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
